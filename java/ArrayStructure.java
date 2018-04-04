@@ -32,6 +32,22 @@ public class ArrayStructure{
         }
         return didValueFound;
     }
+
+    public void deleteIndex(int index){
+        if(index< arraySize){
+            for(int i = index; i<(arraySize-1); i++){
+                myArray[i] = myArray[i+1];
+            }
+            arraySize--;
+        }
+    }
+    public void insertValue(int value){
+        if(arraySize<50){
+            myArray[arraySize]= value;
+            arraySize++;
+        }
+    }
+
     public static void main(String[] args){
         ArrayStructure newArray = new ArrayStructure();
 
@@ -39,5 +55,11 @@ public class ArrayStructure{
         newArray.printArr();
         System.out.println(newArray.getValueAtIndex(2));
         System.out.println(newArray.findByValue(8));
+
+        newArray.deleteIndex(5);
+        newArray.printArr();
+
+        newArray.insertValue(65);
+        newArray.printArr();
     }
 }

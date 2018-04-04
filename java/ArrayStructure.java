@@ -48,6 +48,22 @@ public class ArrayStructure{
         }
     }
 
+    public void linearSearchForValue(int value){
+        boolean valueInArray = false;
+        System.out.print("the value "+value+" was found in: ");
+        for(int i =0; i<arraySize; i++){
+            if(myArray[i]==value){
+                valueInArray = true;
+                System.out.print(i+ " ");
+            }
+        }
+        if(!valueInArray){
+        System.out.print("none");
+        }
+        System.out.println();
+
+    }
+
     public static void main(String[] args){
         ArrayStructure newArray = new ArrayStructure();
 
@@ -61,5 +77,10 @@ public class ArrayStructure{
 
         newArray.insertValue(65);
         newArray.printArr();
+
+        newArray.linearSearchForValue(65);
+        newArray.linearSearchForValue(5);
+        newArray.linearSearchForValue(8);
+        newArray.linearSearchForValue(10);
     }
 }

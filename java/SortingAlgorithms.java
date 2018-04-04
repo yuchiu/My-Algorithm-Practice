@@ -20,6 +20,7 @@ public class SortingAlgorithms{
             System.out.println("--------------------");
         }
     }
+
     public void linearSearch(int val){
         boolean valueFound = false;
         System.out.println("val "+val+" is found at the following index: ");
@@ -33,6 +34,7 @@ public class SortingAlgorithms{
             System.out.println("not found");
         }
     }
+
     public void bubbleSort(){
         for(int i = arrLength-1; i>1; i--){
             for(int j = 0; j< i; j ++){
@@ -42,11 +44,13 @@ public class SortingAlgorithms{
             }
         }
     }
+
     public void swapVal(int num1, int num2){
         int temp = myArr[num1];
         myArr[num1]=myArr[num2];
         myArr[num2] = temp;
     }
+
     public void binarySearch(int val){
         int lowIndex = 0;
         int highIndex = arrLength-1;
@@ -69,19 +73,19 @@ public class SortingAlgorithms{
     public void selectionSort(){
         for(int i =0; i <arrLength-1; i++){
             int temp =i;
-            for(int j =i; j<arrLength;j++){
+            for(int j =i; j<arrLength-1;j++){
                 if(myArr[temp]>myArr[j+1]){
                     temp = j+1;
                 }
-                System.out.println("inside second loop, smallest num is: "+myArr[temp]);
+                // System.out.println("inside second loop, smallest num is: "+myArr[temp]);
             }
-        int loopnum = i+1;
-        System.out.println("inside selection sort, loop num is: "+loopnum);
-        System.out.println("swapping value of: "+myArr[temp]+" at position: "+temp+" to value of: "+myArr[i]+" at position: "+i);
+            // int loopnum = i+1;
+            // System.out.println("inside selection sort, loop num is: "+loopnum);
+            // System.out.println("swapping value of: "+myArr[temp]+" at position: "+temp+" to value of: "+myArr[i]+" at position: "+i);
             swapVal(i, temp);
         }
     }
-
+    
     public static void main(String[] args){
         SortingAlgorithms newArr = new SortingAlgorithms();
         newArr.generateArr();
